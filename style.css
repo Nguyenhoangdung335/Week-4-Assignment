@@ -1,6 +1,6 @@
 #main {
     text-align: center;
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #title {
@@ -16,4 +16,45 @@ h1 {
 
 #img-caption {
     font-size: 17px;
+}
+
+figure {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    figure {
+        background-color: #333;
+        color: #ff0;
+        border-color: #000;
+    }
+}
+
+@media (min-width: 772px) {
+    figure {
+        grid-template-columns: repeat(2, 1fr);
+        border-radius: 50%;
+    }
+
+    figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 992px) {
+    figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+
+    figure {
+        border-radius: 0;
+    }
 }
